@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:../Core Data Classes"
+      name = "Core Data Classes">
+      <Group
+         location = "group:Properties"
+         name = "Properties">
+         <FileRef
+            location = "group:SongLineSection+CoreDataProperties.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SongLine+CoreDataProperties.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Song+CoreDataProperties.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SongSection+CoreDataProperties.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:DataClasses"
+         name = "DataClasses">
+         <FileRef
+            location = "group:Song+CoreDataClass.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SongLineSection+CoreDataClass.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SongLine+CoreDataClass.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SongSection+CoreDataClass.swift">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:../SongBank"
+      name = "SongBank">
+      <Group
+         location = "group:ViewModels"
+         name = "ViewModels">
+         <FileRef
+            location = "group:SongLineSectionViewModel.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SongsViewModel.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SongSectionViewModel.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SongLineViewModel.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SongViewModel.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Assets.xcassets"
+         name = "Assets.xcassets">
+         <Group
+            location = "group:AppIcon.appiconset"
+            name = "AppIcon.appiconset">
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:AccentColor.colorset"
+            name = "AccentColor.colorset">
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Preview Content"
+         name = "Preview Content">
+         <Group
+            location = "group:Preview Assets.xcassets"
+            name = "Preview Assets.xcassets">
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+      </Group>
+      <FileRef
+         location = "group:CoreDataMVVMApp.swift">
+      </FileRef>
+      <Group
+         location = "group:Views"
+         name = "Views">
+         <Group
+            location = "group:Songs"
+            name = "Songs">
+            <FileRef
+               location = "group:SongsView.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SongListRow.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SongEditView.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:SongSection"
+            name = "SongSection">
+            <FileRef
+               location = "group:LineListRow.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LineEditView.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SongSectionView.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Song"
+            name = "Song">
+            <FileRef
+               location = "group:SectionEditView.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SectionListRow.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SongView.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:SongLineSection"
+            name = "SongLineSection">
+            <FileRef
+               location = "group:SongLineSectionView.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:SongLine"
+            name = "SongLine">
+            <FileRef
+               location = "group:CheckboxCustomToggleStyle.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LineSectionListRow.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SongLineView.swift">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:Data Model"
+         name = "Data Model">
+         <FileRef
+            location = "group:Persistence.swift">
+         </FileRef>
+         <FileRef
+            location = "group:CoreDataMVVM.xcdatamodeld">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Info.plist">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "absolute:Users/ryancrisanti/XcodeDevelopment/SongBank/SongBank.xcodeproj">
+   </FileRef>
+</Workspace>

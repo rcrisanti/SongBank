@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Song" representedClassName="Song" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="modified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="sections" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="SongSection" inverseName="song" inverseEntity="SongSection"/>
+    </entity>
+    <entity name="SongLine" representedClassName="SongLine" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="lineSections" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="SongLineSection" inverseName="line" inverseEntity="SongLineSection"/>
+        <relationship name="section" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SongSection" inverseName="lines" inverseEntity="SongSection"/>
+    </entity>
+    <entity name="SongLineSection" representedClassName="SongLineSection" syncable="YES">
+        <attribute name="chord" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lyrics" optional="YES" attributeType="String"/>
+        <relationship name="line" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SongLine" inverseName="lineSections" inverseEntity="SongLine"/>
+    </entity>
+    <entity name="SongSection" representedClassName="SongSection" syncable="YES">
+        <attribute name="header" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="lines" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="SongLine" inverseName="section" inverseEntity="SongLine"/>
+        <relationship name="song" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Song" inverseName="sections" inverseEntity="Song"/>
+    </entity>
+    <elements>
+        <element name="Song" positionX="-698.8238525390625" positionY="54.89163208007812" width="128" height="133"/>
+        <element name="SongLine" positionX="-278.658203125" positionY="85.07147216796875" width="128" height="88"/>
+        <element name="SongLineSection" positionX="-63.15686035156256" positionY="55.15304565429688" width="128" height="89"/>
+        <element name="SongSection" positionX="-473.8702392578125" positionY="84.93984985351562" width="115.1360473632812" height="103"/>
+    </elements>
+</model>
