@@ -30,6 +30,7 @@
 		ED1A835B26541E2B009BDAE1 /* SongLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A834126541E2B009BDAE1 /* SongLineView.swift */; };
 		ED1A835C26541E2B009BDAE1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A834326541E2B009BDAE1 /* Persistence.swift */; };
 		ED1A835D26541E2B009BDAE1 /* SongBank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED1A834426541E2B009BDAE1 /* SongBank.xcdatamodeld */; };
+		ED1A836126544A2F009BDAE1 /* SongLineSectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A836026544A2F009BDAE1 /* SongLineSectionError.swift */; };
 		ED5E8AA2264AF19F00590AA9 /* Song+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E8A9A264AF19E00590AA9 /* Song+CoreDataClass.swift */; };
 		ED5E8AA3264AF19F00590AA9 /* Song+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E8A9B264AF19E00590AA9 /* Song+CoreDataProperties.swift */; };
 		ED5E8AA4264AF19F00590AA9 /* SongLineSection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E8A9C264AF19E00590AA9 /* SongLineSection+CoreDataClass.swift */; };
@@ -65,6 +66,7 @@
 		ED1A834326541E2B009BDAE1 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		ED1A834526541E2B009BDAE1 /* CoreDataMVVM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataMVVM.xcdatamodel; sourceTree = "<group>"; };
 		ED1A834626541E2B009BDAE1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED1A836026544A2F009BDAE1 /* SongLineSectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongLineSectionError.swift; sourceTree = "<group>"; };
 		ED5E8A9A264AF19E00590AA9 /* Song+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ED5E8A9B264AF19E00590AA9 /* Song+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED5E8A9C264AF19E00590AA9 /* SongLineSection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SongLineSection+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -132,9 +134,9 @@
 		ED1A833426541E2B009BDAE1 /* SongSection */ = {
 			isa = PBXGroup;
 			children = (
+				ED1A833726541E2B009BDAE1 /* SongSectionView.swift */,
 				ED1A833526541E2B009BDAE1 /* LineListRow.swift */,
 				ED1A833626541E2B009BDAE1 /* LineEditView.swift */,
-				ED1A833726541E2B009BDAE1 /* SongSectionView.swift */,
 			);
 			path = SongSection;
 			sourceTree = "<group>";
@@ -142,9 +144,9 @@
 		ED1A833826541E2B009BDAE1 /* Song */ = {
 			isa = PBXGroup;
 			children = (
-				ED1A833926541E2B009BDAE1 /* SectionEditView.swift */,
-				ED1A833A26541E2B009BDAE1 /* SectionListRow.swift */,
 				ED1A833B26541E2B009BDAE1 /* SongView.swift */,
+				ED1A833A26541E2B009BDAE1 /* SectionListRow.swift */,
+				ED1A833926541E2B009BDAE1 /* SectionEditView.swift */,
 			);
 			path = Song;
 			sourceTree = "<group>";
@@ -160,9 +162,9 @@
 		ED1A833E26541E2B009BDAE1 /* SongLine */ = {
 			isa = PBXGroup;
 			children = (
-				ED1A833F26541E2B009BDAE1 /* CheckboxCustomToggleStyle.swift */,
-				ED1A834026541E2B009BDAE1 /* LineSectionListRow.swift */,
 				ED1A834126541E2B009BDAE1 /* SongLineView.swift */,
+				ED1A834026541E2B009BDAE1 /* LineSectionListRow.swift */,
+				ED1A833F26541E2B009BDAE1 /* CheckboxCustomToggleStyle.swift */,
 			);
 			path = SongLine;
 			sourceTree = "<group>";
@@ -174,6 +176,14 @@
 				ED1A834426541E2B009BDAE1 /* SongBank.xcdatamodeld */,
 			);
 			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		ED1A835F26544A1B009BDAE1 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				ED1A836026544A2F009BDAE1 /* SongLineSectionError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		ED5E8AAA264AF1AD00590AA9 /* Core Data Classes */ = {
@@ -230,6 +240,7 @@
 				ED1A834226541E2B009BDAE1 /* Data Model */,
 				ED1A832F26541E2B009BDAE1 /* Views */,
 				ED1A832526541E2B009BDAE1 /* View Models */,
+				ED1A835F26544A1B009BDAE1 /* Errors */,
 				ED1A832E26541E2B009BDAE1 /* CoreDataMVVMApp.swift */,
 				ED1A832B26541E2B009BDAE1 /* Assets.xcassets */,
 				ED1A832C26541E2B009BDAE1 /* Preview Content */,
@@ -322,6 +333,7 @@
 				ED1A835A26541E2B009BDAE1 /* LineSectionListRow.swift in Sources */,
 				ED1A834A26541E2B009BDAE1 /* SongLineViewModel.swift in Sources */,
 				ED5E8AA4264AF19F00590AA9 /* SongLineSection+CoreDataClass.swift in Sources */,
+				ED1A836126544A2F009BDAE1 /* SongLineSectionError.swift in Sources */,
 				ED5E8AA7264AF19F00590AA9 /* SongLine+CoreDataProperties.swift in Sources */,
 				ED1A835326541E2B009BDAE1 /* LineEditView.swift in Sources */,
 				ED1A835526541E2B009BDAE1 /* SectionEditView.swift in Sources */,

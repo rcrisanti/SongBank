@@ -12,13 +12,13 @@ extension SongLineView {
     class ViewModel: ObservableObject, Identifiable, CustomDebugStringConvertible {
         @Published var songLine: SongLine
         @Published var lineSections: [SongLineSectionView.ViewModel]
-        
         let id: UUID
         
         var disabled: Bool {
             false
         }
         
+        // MARK: Initializers
         init(_ songLine: SongLine) {
             self.songLine = songLine
             lineSections = songLine.wrappedLineSections.map { SongLineSectionView.ViewModel($0) }
@@ -34,6 +34,7 @@ extension SongLineView {
             self.init(songLine)
         }
         
+        // MARK: Saving & Refreshing
         func fetchLineSections() {
             lineSections = PersistenceController.shared.fetchLineSections(in: songLine).map { SongLineSectionView.ViewModel($0) }
         }
@@ -48,6 +49,7 @@ extension SongLineView {
             refresh()
         }
         
+        // MARK: Delete LineSections
         func deleteLineSections(at offsets: IndexSet) {
             offsets.forEach { index in
                 let lineSection = lineSections[index]
@@ -56,6 +58,7 @@ extension SongLineView {
             refresh()
         }
         
+        // MARK: Merge
         func merge(_ first: SongLineSection, with second: SongLineSection) {
             first.lyrics = first.wrappedLyrics + second.wrappedLyrics
             
@@ -75,6 +78,7 @@ extension SongLineView {
             }
         }
         
+        // MARK: Logging & Debugging
         var debugDescription: String {
             "SongLineView.ViewModel(\(lineSections))"
         }

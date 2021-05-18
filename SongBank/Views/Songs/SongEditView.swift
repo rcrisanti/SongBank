@@ -29,7 +29,6 @@ struct SongEditView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-//                        PersistenceController.shared.viewContext.rollback()
                         viewModel.cancel()
                         presentationMode.wrappedValue.dismiss()
                     }

@@ -23,28 +23,15 @@ struct SongLineView: View {
 
     var body: some View {
         let showingToggles = Binding<Bool>(
-            get: {                
-                switch editMode?.wrappedValue {
-                case .active:
-                    return true
-                default:
-                    return false
-                }
-            }, set: {
-                switch $0 {
-                case true:
-                    editMode?.wrappedValue = .active
-                default:
-                    editMode?.wrappedValue = .inactive
-                }
-            }
+            get: { isShowingToggles() },
+            set: { setShowingToggles(to: $0) }
         )
         
         List {
             ForEach(viewModel.lineSections) { lineSection in
                 NavigationLink(destination: SongLineSectionView(viewModel: lineSection, editable: false)) {
                     LineSectionListRow(
-                        viewModel: $viewModel.lineSections[viewModel.lineSections.firstIndex(of: lineSection)!],
+                        viewModel: $viewModel.lineSections[lineSection.getIndex()],
                         showingToggle: showingToggles,
                         selectedItems: $multiSelection
                     )
@@ -53,44 +40,67 @@ struct SongLineView: View {
             .onDelete(perform: viewModel.deleteLineSections)
         }
         .navigationBarTitle("Line Sections", displayMode: .large)
-        .toolbar {
-            // MARK: When this isnt here the back button disappears... why???
-            ToolbarItem(placement: .navigationBarLeading) {
-                Text("")
-            }
-            
-            ToolbarItem(placement: .principal) {
-                Text("...\(String(viewModel.id.uuidString.suffix(8)))")
-            }
-            
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button(action: {
-                    viewModel.merge(multiSelection)
-                }) {
-                    Image(systemName: "arrow.triangle.merge")
-                }
-                .disabled(!mergeable)
-                
-                Button(action: {
-                    showingNewLineSectionSheet = true
-                }) {
-                    Image(systemName: "plus")
-                }
-                
-                EditButton()
-            }
-        }
+        .toolbar { toolbar }
         .fullScreenCover(isPresented: $showingNewLineSectionSheet) {
             NavigationView {
                 SongLineSectionView(songLine: viewModel.songLine, editable: true)
             }
         }
-        .onAppear {
-            viewModel.refresh()
+        .onAppear { viewModel.refresh() }
+        .onChange(of: showingNewLineSectionSheet, perform: { _ in viewModel.refresh() })
+    }
+}
+
+// MARK: - Toggle functions
+extension SongLineView {
+    func isShowingToggles() -> Bool {
+        switch editMode?.wrappedValue {
+        case .active:
+            return true
+        default:
+            return false
         }
-        .onChange(of: showingNewLineSectionSheet, perform: { _ in
-            viewModel.refresh()
-        })
+    }
+    
+    func setShowingToggles(to showingToggles: Bool) {
+        switch showingToggles {
+        case true:
+            editMode?.wrappedValue = .active
+        default:
+            editMode?.wrappedValue = .inactive
+        }
+    }
+}
+
+// MARK: - Toolbar
+extension SongLineView {
+    @ToolbarContentBuilder
+    var toolbar: some ToolbarContent {
+        // MARK: When this isnt here the back button disappears... why???
+        ToolbarItem(placement: .navigationBarLeading) {
+            Text("")
+        }
+        
+        ToolbarItem(placement: .principal) {
+            Text("...\(String(viewModel.id.uuidString.suffix(8)))")
+        }
+        
+        ToolbarItemGroup(placement: .navigationBarTrailing) {
+            Button(action: {
+                viewModel.merge(multiSelection)
+            }) {
+                Image(systemName: "arrow.triangle.merge")
+            }
+            .disabled(!mergeable)
+            
+            Button(action: {
+                showingNewLineSectionSheet = true
+            }) {
+                Image(systemName: "plus")
+            }
+            
+            EditButton()
+        }
     }
 }
 
