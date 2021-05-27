@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct LineSectionListRow: View {
-    @Binding var viewModel: SongLineSectionView.ViewModel
+    @Binding var viewModel: SongLineSectionEditView.ViewModel
     @State private var showingSheet = false
-    
     @Binding var showingToggle: Bool
     @Binding var selectedItems: Set<UUID>
     var isSelected: Bool {
         selectedItems.contains(viewModel.id)
     }
     
-    init(viewModel: Binding<SongLineSectionView.ViewModel>, showingToggle: Binding<Bool>, selectedItems: Binding<Set<UUID>>) {
+    init(viewModel: Binding<SongLineSectionEditView.ViewModel>, showingToggle: Binding<Bool>, selectedItems: Binding<Set<UUID>>) {
         _viewModel = viewModel
         _selectedItems = selectedItems
         _showingToggle = showingToggle
@@ -25,16 +24,8 @@ struct LineSectionListRow: View {
     
     var body: some View {
         let selectionController = Binding<Bool>(
-            get: {
-                isSelected
-            },
-            set: {
-                if $0 {
-                    selectedItems.insert(viewModel.id)
-                } else {
-                    selectedItems.remove(viewModel.id)
-                }
-            }
+            get: { isSelected },
+            set: { setSelectionController(to: $0) }
         )
         
         HStack {
@@ -48,10 +39,10 @@ struct LineSectionListRow: View {
                 Text(viewModel.lyrics)
             }
         }
-        .fullScreenCover(isPresented: $showingSheet) {
-//            NavigationView {
-                SongLineSectionView(viewModel: viewModel, editable: true)
-//            }
+        .sheet(isPresented: $showingSheet) {
+            NavigationView {
+                SongLineSectionEditView(viewModel: viewModel)
+            }
         }
         .contextMenu(ContextMenu(menuItems: {
             Button(action: {
@@ -63,9 +54,20 @@ struct LineSectionListRow: View {
     }
 }
 
+// MARK: - Selection Controller
+extension LineSectionListRow {
+    func setSelectionController(to: Bool) {
+        if to {
+            selectedItems.insert(viewModel.id)
+        } else {
+            selectedItems.remove(viewModel.id)
+        }
+    }
+}
+
 struct LineSectionListRow_Previews: PreviewProvider {
     static let songLineSection = SongLineSection(context: PersistenceController.preview.viewContext)
-    static let viewModel = SongLineSectionView.ViewModel(songLineSection, editable: true)
+    static let viewModel = SongLineSectionEditView.ViewModel(songLineSection)
     
     static var previews: some View {
         LineSectionListRow(viewModel: .constant(viewModel), showingToggle: .constant(true), selectedItems: .constant([viewModel.id]))

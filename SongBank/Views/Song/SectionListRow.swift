@@ -17,7 +17,7 @@ struct SectionListRow: View {
     
     var body: some View {
         Text(viewModel.header)
-            .fullScreenCover(isPresented: $showingSheet) {
+            .sheet(isPresented: $showingSheet) {
                 SectionEditView(viewModel: viewModel)
             }
             .contextMenu(ContextMenu(menuItems: {

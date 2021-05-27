@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED1A834726541E2B009BDAE1 /* SongLineSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A832626541E2B009BDAE1 /* SongLineSectionViewModel.swift */; };
+		ED1A834726541E2B009BDAE1 /* SongLineSectionEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A832626541E2B009BDAE1 /* SongLineSectionEditViewModel.swift */; };
 		ED1A834826541E2B009BDAE1 /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A832726541E2B009BDAE1 /* SongsViewModel.swift */; };
 		ED1A834926541E2B009BDAE1 /* SongSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A832826541E2B009BDAE1 /* SongSectionViewModel.swift */; };
 		ED1A834A26541E2B009BDAE1 /* SongLineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A832926541E2B009BDAE1 /* SongLineViewModel.swift */; };
@@ -24,13 +24,14 @@
 		ED1A835526541E2B009BDAE1 /* SectionEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A833926541E2B009BDAE1 /* SectionEditView.swift */; };
 		ED1A835626541E2B009BDAE1 /* SectionListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A833A26541E2B009BDAE1 /* SectionListRow.swift */; };
 		ED1A835726541E2B009BDAE1 /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A833B26541E2B009BDAE1 /* SongView.swift */; };
-		ED1A835826541E2B009BDAE1 /* SongLineSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A833D26541E2B009BDAE1 /* SongLineSectionView.swift */; };
+		ED1A835826541E2B009BDAE1 /* SongLineSectionEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A833D26541E2B009BDAE1 /* SongLineSectionEditView.swift */; };
 		ED1A835926541E2B009BDAE1 /* CheckboxCustomToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A833F26541E2B009BDAE1 /* CheckboxCustomToggleStyle.swift */; };
 		ED1A835A26541E2B009BDAE1 /* LineSectionListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A834026541E2B009BDAE1 /* LineSectionListRow.swift */; };
 		ED1A835B26541E2B009BDAE1 /* SongLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A834126541E2B009BDAE1 /* SongLineView.swift */; };
 		ED1A835C26541E2B009BDAE1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A834326541E2B009BDAE1 /* Persistence.swift */; };
 		ED1A835D26541E2B009BDAE1 /* SongBank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED1A834426541E2B009BDAE1 /* SongBank.xcdatamodeld */; };
 		ED1A836126544A2F009BDAE1 /* SongLineSectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A836026544A2F009BDAE1 /* SongLineSectionError.swift */; };
+		ED1A83652654557B009BDAE1 /* LineActionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A83642654557B009BDAE1 /* LineActionMenu.swift */; };
 		ED5E8AA2264AF19F00590AA9 /* Song+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E8A9A264AF19E00590AA9 /* Song+CoreDataClass.swift */; };
 		ED5E8AA3264AF19F00590AA9 /* Song+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E8A9B264AF19E00590AA9 /* Song+CoreDataProperties.swift */; };
 		ED5E8AA4264AF19F00590AA9 /* SongLineSection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E8A9C264AF19E00590AA9 /* SongLineSection+CoreDataClass.swift */; };
@@ -39,10 +40,12 @@
 		ED5E8AA7264AF19F00590AA9 /* SongLine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E8A9F264AF19E00590AA9 /* SongLine+CoreDataProperties.swift */; };
 		ED5E8AA8264AF19F00590AA9 /* SongSection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E8AA0264AF19F00590AA9 /* SongSection+CoreDataClass.swift */; };
 		ED5E8AA9264AF19F00590AA9 /* SongSection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E8AA1264AF19F00590AA9 /* SongSection+CoreDataProperties.swift */; };
+		EDADB79426602CF000A16722 /* SplitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDADB79326602CF000A16722 /* SplitFormView.swift */; };
+		EDADB797266030D400A16722 /* CursorControlText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDADB796266030D400A16722 /* CursorControlText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ED1A832626541E2B009BDAE1 /* SongLineSectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLineSectionViewModel.swift; sourceTree = "<group>"; };
+		ED1A832626541E2B009BDAE1 /* SongLineSectionEditViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLineSectionEditViewModel.swift; sourceTree = "<group>"; };
 		ED1A832726541E2B009BDAE1 /* SongsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsViewModel.swift; sourceTree = "<group>"; };
 		ED1A832826541E2B009BDAE1 /* SongSectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongSectionViewModel.swift; sourceTree = "<group>"; };
 		ED1A832926541E2B009BDAE1 /* SongLineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLineViewModel.swift; sourceTree = "<group>"; };
@@ -59,7 +62,7 @@
 		ED1A833926541E2B009BDAE1 /* SectionEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionEditView.swift; sourceTree = "<group>"; };
 		ED1A833A26541E2B009BDAE1 /* SectionListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionListRow.swift; sourceTree = "<group>"; };
 		ED1A833B26541E2B009BDAE1 /* SongView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
-		ED1A833D26541E2B009BDAE1 /* SongLineSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLineSectionView.swift; sourceTree = "<group>"; };
+		ED1A833D26541E2B009BDAE1 /* SongLineSectionEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLineSectionEditView.swift; sourceTree = "<group>"; };
 		ED1A833F26541E2B009BDAE1 /* CheckboxCustomToggleStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxCustomToggleStyle.swift; sourceTree = "<group>"; };
 		ED1A834026541E2B009BDAE1 /* LineSectionListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineSectionListRow.swift; sourceTree = "<group>"; };
 		ED1A834126541E2B009BDAE1 /* SongLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLineView.swift; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 		ED1A834526541E2B009BDAE1 /* CoreDataMVVM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataMVVM.xcdatamodel; sourceTree = "<group>"; };
 		ED1A834626541E2B009BDAE1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED1A836026544A2F009BDAE1 /* SongLineSectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongLineSectionError.swift; sourceTree = "<group>"; };
+		ED1A83642654557B009BDAE1 /* LineActionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineActionMenu.swift; sourceTree = "<group>"; };
 		ED5E8A9A264AF19E00590AA9 /* Song+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ED5E8A9B264AF19E00590AA9 /* Song+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED5E8A9C264AF19E00590AA9 /* SongLineSection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SongLineSection+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 		ED5E8AA0264AF19F00590AA9 /* SongSection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SongSection+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ED5E8AA1264AF19F00590AA9 /* SongSection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SongSection+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED69976D2640F37E0093F6BE /* SongBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDADB79326602CF000A16722 /* SplitFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitFormView.swift; sourceTree = "<group>"; };
+		EDADB796266030D400A16722 /* CursorControlText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorControlText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +102,7 @@
 				ED1A832A26541E2B009BDAE1 /* SongViewModel.swift */,
 				ED1A832826541E2B009BDAE1 /* SongSectionViewModel.swift */,
 				ED1A832926541E2B009BDAE1 /* SongLineViewModel.swift */,
-				ED1A832626541E2B009BDAE1 /* SongLineSectionViewModel.swift */,
+				ED1A832626541E2B009BDAE1 /* SongLineSectionEditViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -154,7 +160,7 @@
 		ED1A833C26541E2B009BDAE1 /* SongLineSection */ = {
 			isa = PBXGroup;
 			children = (
-				ED1A833D26541E2B009BDAE1 /* SongLineSectionView.swift */,
+				ED1A833D26541E2B009BDAE1 /* SongLineSectionEditView.swift */,
 			);
 			path = SongLineSection;
 			sourceTree = "<group>";
@@ -163,8 +169,10 @@
 			isa = PBXGroup;
 			children = (
 				ED1A834126541E2B009BDAE1 /* SongLineView.swift */,
+				ED1A83642654557B009BDAE1 /* LineActionMenu.swift */,
 				ED1A834026541E2B009BDAE1 /* LineSectionListRow.swift */,
 				ED1A833F26541E2B009BDAE1 /* CheckboxCustomToggleStyle.swift */,
+				EDADB795266030A600A16722 /* Split Section */,
 			);
 			path = SongLine;
 			sourceTree = "<group>";
@@ -189,6 +197,7 @@
 		ED5E8AAA264AF1AD00590AA9 /* Core Data Classes */ = {
 			isa = PBXGroup;
 			children = (
+				ED1A832E26541E2B009BDAE1 /* CoreDataMVVMApp.swift */,
 				ED5E8AAB264AF2A200590AA9 /* DataClasses */,
 				ED5E8AAC264AF2AC00590AA9 /* Properties */,
 			);
@@ -241,12 +250,20 @@
 				ED1A832F26541E2B009BDAE1 /* Views */,
 				ED1A832526541E2B009BDAE1 /* View Models */,
 				ED1A835F26544A1B009BDAE1 /* Errors */,
-				ED1A832E26541E2B009BDAE1 /* CoreDataMVVMApp.swift */,
 				ED1A832B26541E2B009BDAE1 /* Assets.xcassets */,
 				ED1A832C26541E2B009BDAE1 /* Preview Content */,
 				ED1A834626541E2B009BDAE1 /* Info.plist */,
 			);
 			path = SongBank;
+			sourceTree = "<group>";
+		};
+		EDADB795266030A600A16722 /* Split Section */ = {
+			isa = PBXGroup;
+			children = (
+				EDADB79326602CF000A16722 /* SplitFormView.swift */,
+				EDADB796266030D400A16722 /* CursorControlText.swift */,
+			);
+			path = "Split Section";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,12 +338,13 @@
 				ED1A834E26541E2B009BDAE1 /* CoreDataMVVMApp.swift in Sources */,
 				ED1A835726541E2B009BDAE1 /* SongView.swift in Sources */,
 				ED5E8AA8264AF19F00590AA9 /* SongSection+CoreDataClass.swift in Sources */,
-				ED1A834726541E2B009BDAE1 /* SongLineSectionViewModel.swift in Sources */,
+				ED1A834726541E2B009BDAE1 /* SongLineSectionEditViewModel.swift in Sources */,
 				ED1A835D26541E2B009BDAE1 /* SongBank.xcdatamodeld in Sources */,
 				ED1A834B26541E2B009BDAE1 /* SongViewModel.swift in Sources */,
 				ED5E8AA5264AF19F00590AA9 /* SongLineSection+CoreDataProperties.swift in Sources */,
-				ED1A835826541E2B009BDAE1 /* SongLineSectionView.swift in Sources */,
+				ED1A835826541E2B009BDAE1 /* SongLineSectionEditView.swift in Sources */,
 				ED1A835626541E2B009BDAE1 /* SectionListRow.swift in Sources */,
+				EDADB79426602CF000A16722 /* SplitFormView.swift in Sources */,
 				ED5E8AA9264AF19F00590AA9 /* SongSection+CoreDataProperties.swift in Sources */,
 				ED1A834926541E2B009BDAE1 /* SongSectionViewModel.swift in Sources */,
 				ED5E8AA6264AF19F00590AA9 /* SongLine+CoreDataClass.swift in Sources */,
@@ -334,10 +352,12 @@
 				ED1A834A26541E2B009BDAE1 /* SongLineViewModel.swift in Sources */,
 				ED5E8AA4264AF19F00590AA9 /* SongLineSection+CoreDataClass.swift in Sources */,
 				ED1A836126544A2F009BDAE1 /* SongLineSectionError.swift in Sources */,
+				ED1A83652654557B009BDAE1 /* LineActionMenu.swift in Sources */,
 				ED5E8AA7264AF19F00590AA9 /* SongLine+CoreDataProperties.swift in Sources */,
 				ED1A835326541E2B009BDAE1 /* LineEditView.swift in Sources */,
 				ED1A835526541E2B009BDAE1 /* SectionEditView.swift in Sources */,
 				ED1A835C26541E2B009BDAE1 /* Persistence.swift in Sources */,
+				EDADB797266030D400A16722 /* CursorControlText.swift in Sources */,
 				ED1A835026541E2B009BDAE1 /* SongListRow.swift in Sources */,
 				ED1A835226541E2B009BDAE1 /* LineListRow.swift in Sources */,
 				ED5E8AA2264AF19F00590AA9 /* Song+CoreDataClass.swift in Sources */,

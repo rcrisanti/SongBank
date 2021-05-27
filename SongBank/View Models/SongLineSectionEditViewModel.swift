@@ -1,5 +1,5 @@
 //
-//  SongLineSectionViewModel.swift
+//  SongLineSectionEditViewModel.swift
 //  CoreDataMVVM
 //
 //  Created by Ryan Crisanti on 5/10/21.
@@ -8,34 +8,32 @@
 import Foundation
 import os.log
 
-extension SongLineSectionView {
+extension SongLineSectionEditView {
     class ViewModel: ObservableObject, Identifiable, CustomDebugStringConvertible, Equatable {
         @Published var songLineSection: SongLineSection
         @Published var lyrics: String
         @Published var chord: String
         let id: UUID
-        @Published var editable: Bool
                 
-        var disbled: Bool {
+        var disabled: Bool {
             lyrics.isEmpty || (lyrics == songLineSection.wrappedLyrics && chord == songLineSection.wrappedChord)
         }
         
         // MARK: Initializers
-        init(_ songLineSection: SongLineSection, editable: Bool = true) {
+        init(_ songLineSection: SongLineSection) {
             self.songLineSection = songLineSection
             
             lyrics = songLineSection.wrappedLyrics
             chord = songLineSection.wrappedChord
             id = songLineSection.wrappedId
-            self.editable = editable
         }
         
-        convenience init(in songLine: SongLine, editable: Bool = true) {
+        convenience init(in songLine: SongLine) {
             let songLineSection = SongLineSection(context: PersistenceController.shared.viewContext)
             songLineSection.line = songLine
             songLineSection.id = UUID()
             
-            self.init(songLineSection, editable: editable)
+            self.init(songLineSection)
         }
         
         // MARK: Saving & Refreshing
@@ -44,6 +42,12 @@ extension SongLineSectionView {
             songLineSection.chord = chord.isEmpty ? nil : chord
             
             PersistenceController.shared.save()
+        }
+        
+        func cancel() {
+            PersistenceController.shared.viewContext.rollback()
+            lyrics = songLineSection.wrappedLyrics
+            chord = songLineSection.wrappedChord
         }
         
         // MARK: Get index
@@ -65,15 +69,15 @@ extension SongLineSectionView {
         }
         
         // MARK: Protocol Conformance
-        static func == (lhs: SongLineSectionView.ViewModel, rhs: SongLineSectionView.ViewModel) -> Bool {
+        static func == (lhs: SongLineSectionEditView.ViewModel, rhs: SongLineSectionEditView.ViewModel) -> Bool {
             (lhs.id == rhs.id) && (lhs.chord == rhs.chord) && (lhs.lyrics == rhs.lyrics)
         }
         
         // MARK: Logging & Debugging
         var debugDescription: String {
-            "SongLineSection.ViewModel(chord: \(chord), lyrics: \(lyrics))" 
+            "SongLineSectionEditView.ViewModel(chord: \(chord), lyrics: \(lyrics))"
         }
         
-        static let logger = Logger(subsystem: "com.rcrisanti.CoreDataMVVM", category: "SongLineSectionView.ViewModel")
+        static let logger = Logger(subsystem: "com.rcrisanti.SongBank", category: "SongLineSectionEditView.ViewModel")
     }
 }

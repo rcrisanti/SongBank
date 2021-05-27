@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension SongLineSectionView {
+extension SongLineSectionEditView {
     enum SongLineSectionError: Error {
         case IndexError(String)
     }

@@ -22,7 +22,7 @@ struct SongListRow: View {
             Text(viewModel.author)
                 .foregroundColor(.secondary)
         }
-        .fullScreenCover(isPresented: $showingSheet) {
+        .sheet(isPresented: $showingSheet) {
             SongEditView(viewModel: viewModel)
         }
         .contextMenu(ContextMenu(menuItems: {

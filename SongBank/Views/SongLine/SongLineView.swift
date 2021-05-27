@@ -12,9 +12,8 @@ struct SongLineView: View {
     @StateObject var viewModel: ViewModel
     @State private var showingNewLineSectionSheet = false
     @State private var multiSelection: Set<UUID> = []
-    
-    var mergeable: Bool {
-        multiSelection.count == 2
+    @State private var showingToggles = false {
+        didSet { multiSelection = [] }
     }
     
     init(viewModel: ViewModel) {
@@ -22,53 +21,44 @@ struct SongLineView: View {
     }
 
     var body: some View {
-        let showingToggles = Binding<Bool>(
-            get: { isShowingToggles() },
-            set: { setShowingToggles(to: $0) }
-        )
-        
-        List {
-            ForEach(viewModel.lineSections) { lineSection in
-                NavigationLink(destination: SongLineSectionView(viewModel: lineSection, editable: false)) {
-                    LineSectionListRow(
-                        viewModel: $viewModel.lineSections[lineSection.getIndex()],
-                        showingToggle: showingToggles,
-                        selectedItems: $multiSelection
+        ZStack {
+            List {
+                ForEach(viewModel.lineSections) { lineSection in
+                    NavigationLink(destination: SongLineSectionEditView(viewModel: lineSection)) {
+                        LineSectionListRow(
+                            viewModel: $viewModel.lineSections[lineSection.getIndex()],
+                            showingToggle: $showingToggles,
+                            selectedItems: $multiSelection
+                        )
+                    }
+                }
+                .onDelete(perform: viewModel.deleteLineSections)
+            }
+            
+            HStack {
+                Spacer()
+                VStack {                    
+                    Spacer()
+                    LineActionMenu(
+                        viewModel: viewModel,
+                        multiSelection: $multiSelection,
+                        showingToggles: $showingToggles
                     )
+                    .padding([.bottom, .trailing], 30)
                 }
             }
-            .onDelete(perform: viewModel.deleteLineSections)
         }
         .navigationBarTitle("Line Sections", displayMode: .large)
         .toolbar { toolbar }
         .fullScreenCover(isPresented: $showingNewLineSectionSheet) {
             NavigationView {
-                SongLineSectionView(songLine: viewModel.songLine, editable: true)
+                SongLineSectionEditView(songLine: viewModel.songLine)
             }
         }
-        .onAppear { viewModel.refresh() }
+        .onAppear {
+            viewModel.refresh()
+        }
         .onChange(of: showingNewLineSectionSheet, perform: { _ in viewModel.refresh() })
-    }
-}
-
-// MARK: - Toggle functions
-extension SongLineView {
-    func isShowingToggles() -> Bool {
-        switch editMode?.wrappedValue {
-        case .active:
-            return true
-        default:
-            return false
-        }
-    }
-    
-    func setShowingToggles(to showingToggles: Bool) {
-        switch showingToggles {
-        case true:
-            editMode?.wrappedValue = .active
-        default:
-            editMode?.wrappedValue = .inactive
-        }
     }
 }
 
@@ -87,11 +77,10 @@ extension SongLineView {
         
         ToolbarItemGroup(placement: .navigationBarTrailing) {
             Button(action: {
-                viewModel.merge(multiSelection)
+                withAnimation { showingToggles.toggle() }
             }) {
-                Image(systemName: "arrow.triangle.merge")
+                Image(systemName: "checkmark.circle\(showingToggles ? ".fill" : "")")
             }
-            .disabled(!mergeable)
             
             Button(action: {
                 showingNewLineSectionSheet = true

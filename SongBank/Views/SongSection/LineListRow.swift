@@ -17,8 +17,8 @@ struct LineListRow: View {
     
     var body: some View {
         Text(viewModel.id.uuidString)
-            .fullScreenCover(isPresented: $showingSheet) {
-                LineEditView(viewModel: viewModel)
+            .sheet(isPresented: $showingSheet) {
+                    LineEditView(viewModel: viewModel)
             }
             .contextMenu(ContextMenu(menuItems: {
                 Button(action: {

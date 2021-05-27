@@ -11,7 +11,7 @@ import os.log
 extension SongLineView {
     class ViewModel: ObservableObject, Identifiable, CustomDebugStringConvertible {
         @Published var songLine: SongLine
-        @Published var lineSections: [SongLineSectionView.ViewModel]
+        @Published var lineSections: [SongLineSectionEditView.ViewModel]
         let id: UUID
         
         var disabled: Bool {
@@ -21,7 +21,7 @@ extension SongLineView {
         // MARK: Initializers
         init(_ songLine: SongLine) {
             self.songLine = songLine
-            lineSections = songLine.wrappedLineSections.map { SongLineSectionView.ViewModel($0) }
+            lineSections = songLine.wrappedLineSections.map { SongLineSectionEditView.ViewModel($0) }
             id = songLine.wrappedId
             refresh()
         }
@@ -36,7 +36,7 @@ extension SongLineView {
         
         // MARK: Saving & Refreshing
         func fetchLineSections() {
-            lineSections = PersistenceController.shared.fetchLineSections(in: songLine).map { SongLineSectionView.ViewModel($0) }
+            lineSections = PersistenceController.shared.fetchLineSections(in: songLine).map { SongLineSectionEditView.ViewModel($0) }
         }
         
         func refresh() {
@@ -83,6 +83,6 @@ extension SongLineView {
             "SongLineView.ViewModel(\(lineSections))"
         }
         
-        static let logger = Logger(subsystem: "com.rcrisanti.CoreDataMVVM", category: "SongLineView.ViewModel")
+        static let logger = Logger(subsystem: "com.rcrisanti.SongBank", category: "SongLineView.ViewModel")
     }
 }
