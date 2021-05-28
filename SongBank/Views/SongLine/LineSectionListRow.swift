@@ -39,7 +39,7 @@ struct LineSectionListRow: View {
                 Text(viewModel.lyrics)
             }
         }
-        .sheet(isPresented: $showingSheet) {
+        .fullScreenCover(isPresented: $showingSheet) {
             NavigationView {
                 SongLineSectionEditView(viewModel: viewModel)
             }
