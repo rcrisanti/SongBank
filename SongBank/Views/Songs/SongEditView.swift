@@ -23,7 +23,7 @@ struct SongEditView: View {
                     TextField("Author", text: $viewModel.author)
                 }
                 
-                Text(viewModel.id.uuidString)
+//                Text(viewModel.id.uuidString)
             }
             .navigationTitle("Edit Song")
             .toolbar {

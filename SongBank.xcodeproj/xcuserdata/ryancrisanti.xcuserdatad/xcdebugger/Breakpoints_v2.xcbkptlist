@@ -20,5 +20,133 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7509911C-5C75-4BA6-9EE4-5007FF708923"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SongBank/View Models/SongViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "cancel()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7509911C-5C75-4BA6-9EE4-5007FF708923 - 77915e17c6083848"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SongBank.SongView.ViewModel.cancel() -&gt; ()"
+                  moduleName = "SongBank"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryancrisanti/XcodeDevelopment/SongBank/SongBank/View%20Models/SongViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "7509911C-5C75-4BA6-9EE4-5007FF708923 - eae43da65f4b6d02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #1 (SongBank.SongSection) -&gt; SongBank.SongSectionView.ViewModel in SongBank.SongView.ViewModel.cancel() -&gt; ()"
+                  moduleName = "SongBank"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryancrisanti/XcodeDevelopment/SongBank/SongBank/View%20Models/SongViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "256E7B06-F551-44C3-A3C0-3B1EE024505F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SongBank/View Models/SongViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "cancel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2923974A-D8CF-4FAB-8271-E2177A1A3901"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SongBank/View Models/SongViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "refresh()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "10E0D2C7-E7D2-45CF-A2BD-4F0634A4C871"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SongBank/View Models/SongViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "fetchSections()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "10E0D2C7-E7D2-45CF-A2BD-4F0634A4C871 - 932ab7ce822b1c5c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SongBank.SongView.ViewModel.fetchSections() -&gt; ()"
+                  moduleName = "SongBank"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryancrisanti/XcodeDevelopment/SongBank/SongBank/View%20Models/SongViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "43">
+               </Location>
+               <Location
+                  uuid = "10E0D2C7-E7D2-45CF-A2BD-4F0634A4C871 - eddf6f2d79d12e60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #1 (SongBank.SongSection) -&gt; SongBank.SongSectionView.ViewModel in SongBank.SongView.ViewModel.fetchSections() -&gt; ()"
+                  moduleName = "SongBank"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryancrisanti/XcodeDevelopment/SongBank/SongBank/View%20Models/SongViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

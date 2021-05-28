@@ -23,7 +23,7 @@ extension SongLineView {
             self.songLine = songLine
             lineSections = songLine.wrappedLineSections.map { SongLineSectionEditView.ViewModel($0) }
             id = songLine.wrappedId
-            refresh()
+//            refresh()
         }
         
         convenience init(in songSection: SongSection) {

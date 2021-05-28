@@ -23,7 +23,7 @@ extension SongSectionView {
             header = songSection.wrappedHeader
             id = songSection.wrappedId
             lines = songSection.wrappedLines.map(SongLineView.ViewModel.init)
-            refresh()
+//            refresh()
         }
         
         convenience init(in song: Song) {

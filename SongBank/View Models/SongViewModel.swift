@@ -28,7 +28,6 @@ extension SongView {
             modified = song.wrappedModified
             sections = song.wrappedSections.map(SongSectionView.ViewModel.init)
             id = song.wrappedId
-            refresh()
         }
         
         func fetchSections() {
@@ -58,7 +57,9 @@ extension SongView {
             refresh()
         }
         
-        func cancel() {
+        func cancel() {            
+            PersistenceController.shared.viewContext.rollback()
+            
             title = song.wrappedTitle
             author = song.wrappedAuthor
             sections = song.wrappedSections.map(SongSectionView.ViewModel.init)

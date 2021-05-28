@@ -26,7 +26,7 @@ struct SectionEditView: View {
                     TextField("Header", text: $viewModel.header)
                 }
                 
-                Text(viewModel.id.uuidString)
+//                Text(viewModel.id.uuidString)
             }
             .navigationTitle("Edit Section")
             .toolbar {

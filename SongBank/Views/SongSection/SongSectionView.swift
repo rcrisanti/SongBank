@@ -27,7 +27,7 @@ struct SongSectionView: View {
         }
         .navigationBarTitle("Lines", displayMode: .large)
         .toolbar {
-            // MARK: WHen this isnt here the back button disappears... why???
+            // MARK: When this isnt here the back button disappears... why???
             ToolbarItem(placement: .navigationBarLeading) {
                 Text("")
             }

@@ -39,11 +39,9 @@ struct SongsView: View {
             }
         }
         .onAppear {
-            debugPrint("onAppear")
             viewModel.refresh()
         }
         .onChange(of: showingNewSongSheet, perform: { _ in
-            debugPrint("onChange")
             viewModel.refresh()
         })
     }
