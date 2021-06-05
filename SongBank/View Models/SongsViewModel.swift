@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import os.log
 
 extension SongsView {
-    class ViewModel: ObservableObject {
+    class ViewModel: ObservableObject, CustomDebugStringConvertible {
         @Published var songs: [SongView.ViewModel] = []
         
         init() {
@@ -32,6 +33,15 @@ extension SongsView {
             }
             
             refresh()
+            
+            Self.logger.debug("\(self.debugDescription) successfully deleted songs")
         }
+        
+        // MARK: Logging & Debugging
+        var debugDescription: String {
+            "SongsView.ViewModel(nSongs: \(songs.count))"
+        }
+        
+        static let logger = Logger(subsystem: "com.rcrisanti.SongBank", category: "SongsView.ViewModel")
     }
 }

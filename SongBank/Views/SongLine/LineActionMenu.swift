@@ -14,17 +14,28 @@ struct LineActionMenu: View {
     
     @State private var selectedOption: LineActionMenuOptions = .merge
     @State private var showingAlert = false
+    @State private var showingSheet = false
     
     var body: some View {
+        let menuOptions = [
+            LineActionMenuOption(label: "Merge", systemImage: "arrow.triangle.merge", requiredSelections: 2) {
+                selectedOption = .merge
+                showingAlert = true
+            },
+            LineActionMenuOption(label: "Split", systemImage: "square.split.2x1", requiredSelections: 1) {
+                selectedOption = .split
+                showingSheet = true
+            }
+        ]
+        
         Menu {
-            ForEach(Self.menuOptions) { option in
+            ForEach(menuOptions) { option in
                 Button(action: {
-                    selectedOption = option.option
-                    showingAlert = true
+                    option.action()
                 }) {
                     Label(option.label, systemImage: option.systemImage)
                 }
-                .disabled(option.option.rawValue != multiSelection.count)
+                .disabled(option.requiredSelections != multiSelection.count)
             }
         } label: {
             Image(systemName: "line.horizontal.3.circle.fill")
@@ -34,31 +45,37 @@ struct LineActionMenu: View {
             switch selectedOption {
             case .merge:
                 return mergeAlert
-            case .split:
-                return splitAlert
+            default:
+                return unknownActionAlert
             }
+        }
+        .sheet(isPresented: $showingSheet) {
+            SplitFormView(viewModel: viewModel, id: multiSelection.first!)
         }
     }
 }
 
 // MARK: - Menu options
 extension LineActionMenu {
-    enum LineActionMenuOptions: Int {
-        // Associate value is the # of selections the action requires
-        case merge = 2, split = 1
+    enum LineActionMenuOptions {
+        case merge, split
     }
     
     struct LineActionMenuOption: Identifiable {
         let id = UUID()
         let label: String
         let systemImage: String
-        let option: LineActionMenuOptions
+        let requiredSelections: Int
+        let action: () -> Void
     }
     
-    static let menuOptions = [
-        LineActionMenuOption(label: "Merge", systemImage: "arrow.triangle.merge", option: .merge),
-        LineActionMenuOption(label: "Split", systemImage: "square.split.2x1", option: .split)
-    ]
+    var unknownActionAlert: Alert {
+        Alert(
+            title: Text("Unknown Action"),
+            message: Text("No alert should have appeared..."),
+            dismissButton: .default(Text("OK"))
+        )
+    }
 }
 
 // MARK: - Merge Alert
@@ -79,25 +96,5 @@ extension LineActionMenu {
                 }
             }
         )
-    }
-}
-
-// MARK: - Split Alert
-extension LineActionMenu {
-    var splitAlert: Alert {
-        Alert(
-            title: Text("Split the selected section?"),
-            message: Text("This cannot be undone"),
-            primaryButton: .default(Text("Split")) {
-                withAnimation {
-                    // TODO: split action here
-                    showingToggles = false
-                }
-            },
-            secondaryButton: .cancel() {
-                withAnimation {
-                    showingToggles = false
-                }
-            })
     }
 }

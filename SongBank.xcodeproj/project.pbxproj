@@ -41,7 +41,6 @@
 		ED5E8AA8264AF19F00590AA9 /* SongSection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E8AA0264AF19F00590AA9 /* SongSection+CoreDataClass.swift */; };
 		ED5E8AA9264AF19F00590AA9 /* SongSection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E8AA1264AF19F00590AA9 /* SongSection+CoreDataProperties.swift */; };
 		EDADB79426602CF000A16722 /* SplitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDADB79326602CF000A16722 /* SplitFormView.swift */; };
-		EDADB797266030D400A16722 /* CursorControlText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDADB796266030D400A16722 /* CursorControlText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +80,6 @@
 		ED5E8AA1264AF19F00590AA9 /* SongSection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SongSection+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED69976D2640F37E0093F6BE /* SongBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDADB79326602CF000A16722 /* SplitFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitFormView.swift; sourceTree = "<group>"; };
-		EDADB796266030D400A16722 /* CursorControlText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorControlText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +170,7 @@
 				ED1A83642654557B009BDAE1 /* LineActionMenu.swift */,
 				ED1A834026541E2B009BDAE1 /* LineSectionListRow.swift */,
 				ED1A833F26541E2B009BDAE1 /* CheckboxCustomToggleStyle.swift */,
-				EDADB795266030A600A16722 /* Split Section */,
+				EDADB79326602CF000A16722 /* SplitFormView.swift */,
 			);
 			path = SongLine;
 			sourceTree = "<group>";
@@ -255,15 +253,6 @@
 				ED1A834626541E2B009BDAE1 /* Info.plist */,
 			);
 			path = SongBank;
-			sourceTree = "<group>";
-		};
-		EDADB795266030A600A16722 /* Split Section */ = {
-			isa = PBXGroup;
-			children = (
-				EDADB79326602CF000A16722 /* SplitFormView.swift */,
-				EDADB796266030D400A16722 /* CursorControlText.swift */,
-			);
-			path = "Split Section";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,7 +346,6 @@
 				ED1A835326541E2B009BDAE1 /* LineEditView.swift in Sources */,
 				ED1A835526541E2B009BDAE1 /* SectionEditView.swift in Sources */,
 				ED1A835C26541E2B009BDAE1 /* Persistence.swift in Sources */,
-				EDADB797266030D400A16722 /* CursorControlText.swift in Sources */,
 				ED1A835026541E2B009BDAE1 /* SongListRow.swift in Sources */,
 				ED1A835226541E2B009BDAE1 /* LineListRow.swift in Sources */,
 				ED5E8AA2264AF19F00590AA9 /* Song+CoreDataClass.swift in Sources */,

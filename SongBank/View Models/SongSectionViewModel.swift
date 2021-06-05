@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import os.log
 
 extension SongSectionView {
-    class ViewModel: ObservableObject, Identifiable {
+    class ViewModel: ObservableObject, Identifiable, CustomDebugStringConvertible {
         @Published var songSection: SongSection
         let id: UUID
         @Published var header: String
@@ -47,6 +48,8 @@ extension SongSectionView {
             songSection.header = header
             songSection.lines = NSOrderedSet(array: lines)
             refresh()
+            
+            Self.logger.debug("\(self.debugDescription) successfully saved")
         }
         
         func deleteLines(at offsets: IndexSet) {
@@ -55,6 +58,15 @@ extension SongSectionView {
                 PersistenceController.shared.viewContext.delete(line.songLine)
             }
             refresh()
+            
+            Self.logger.debug("\(self.debugDescription) successfully deleted lines")
         }
+        
+        // MARK: Logging & Debugging
+        var debugDescription: String {
+            "SongSectionView.ViewModel(song: \(songSection.wrappedSong.wrappedTitle), header: \(header), nLines: \(lines.count))"
+        }
+        
+        static let logger = Logger(subsystem: "com.rcrisanti.SongBank", category: "SongSectionView.ViewModel")
     }
 }

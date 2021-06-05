@@ -42,12 +42,16 @@ extension SongLineSectionEditView {
             songLineSection.chord = chord.isEmpty ? nil : chord
             
             PersistenceController.shared.save()
+            
+            Self.logger.debug("\(self.debugDescription) successfully saved")
         }
         
         func cancel() {
             PersistenceController.shared.viewContext.rollback()
             lyrics = songLineSection.wrappedLyrics
             chord = songLineSection.wrappedChord
+            
+            Self.logger.debug("\(self.debugDescription) successfully canceled")
         }
         
         // MARK: Get index
@@ -75,7 +79,7 @@ extension SongLineSectionEditView {
         
         // MARK: Logging & Debugging
         var debugDescription: String {
-            "SongLineSectionEditView.ViewModel(chord: \(chord), lyrics: \(lyrics))"
+            "SongLineSectionEditView.ViewModel(song: \(songLineSection.wrappedLine.wrappedSection.wrappedSong.wrappedTitle), section: \(songLineSection.wrappedLine.wrappedSection.wrappedHeader), chord: \(chord), lyrics: \(lyrics))"
         }
         
         static let logger = Logger(subsystem: "com.rcrisanti.SongBank", category: "SongLineSectionEditView.ViewModel")

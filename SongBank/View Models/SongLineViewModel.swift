@@ -45,8 +45,17 @@ extension SongLineView {
         }
         
         func save() {
-            songLine.lineSections = NSOrderedSet(array: lineSections)
+            songLine.lineSections = NSOrderedSet(array: lineSections.map { $0.songLineSection })
             refresh()
+            
+            Self.logger.debug("\(self.debugDescription) successfully saved")
+        }
+        
+        func cancel() {
+            PersistenceController.shared.viewContext.rollback()
+            lineSections = songLine.wrappedLineSections.map { SongLineSectionEditView.ViewModel($0) }
+            
+            Self.logger.debug("\(self.debugDescription) successfully canceled")
         }
         
         // MARK: Delete LineSections
@@ -56,6 +65,8 @@ extension SongLineView {
                 PersistenceController.shared.viewContext.delete(lineSection.songLineSection)
             }
             refresh()
+            
+            Self.logger.debug("\(self.debugDescription) successfully deleted line sections")
         }
         
         // MARK: Merge
@@ -64,6 +75,8 @@ extension SongLineView {
             
             PersistenceController.shared.viewContext.delete(second)
             refresh()
+            
+            Self.logger.debug("\(self.debugDescription) successfully merged sections")
         }
         
         func merge(_ ids: Set<UUID>) {
@@ -78,9 +91,30 @@ extension SongLineView {
             }
         }
         
+        // MARK: Split
+        func splitSection(_ id: UUID, at cursorPos: Int, newChord: String? = nil) {
+            let index = songLine.wrappedLineSections.firstIndex(where: { id == $0.id })!
+            let originalSection = songLine.wrappedLineSections[index]
+            
+            let newSection = SongLineSection(context: PersistenceController.shared.viewContext)
+            newSection.id = UUID()
+            newSection.line = songLine
+            newSection.lyrics = String(originalSection.wrappedLyrics.suffix(originalSection.wrappedLyrics.count - cursorPos))
+            newSection.chord = newChord
+            newSection.line = originalSection.line
+            
+            originalSection.lyrics = String(originalSection.wrappedLyrics.prefix(cursorPos))
+            
+            songLine.insertIntoLineSections(newSection, at: index + 1)
+            
+            refresh()
+            
+            Self.logger.debug("\(self.debugDescription) successfully split sections")
+        }
+        
         // MARK: Logging & Debugging
         var debugDescription: String {
-            "SongLineView.ViewModel(\(lineSections))"
+            "SongLineView.ViewModel(song: \(songLine.wrappedSection.wrappedSong.wrappedTitle), section: \(songLine.wrappedSection.wrappedHeader), nLineSections: \(lineSections.count))"
         }
         
         static let logger = Logger(subsystem: "com.rcrisanti.SongBank", category: "SongLineView.ViewModel")
